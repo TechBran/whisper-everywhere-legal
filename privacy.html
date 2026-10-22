@@ -49,14 +49,14 @@
 </head>
 <body>
     <h1>Privacy Policy &mdash; Transcribe Everywhere</h1>
-    <p class="last-updated">Last Updated: October 19, 2026</p>
+    <p class="last-updated">Last Updated: October 22, 2026</p>
     <p class="identity"><strong>App:</strong> Transcribe Everywhere on Google Play (package <code>com.whispereverywhere</code>; formerly named Whisper Everywhere), including its Wear OS companion app.<br>
     <strong>Developer:</strong> Brandon tech, the developer listed for the app on Google Play.<br>
     <strong>Website:</strong> <a href="https://techbran.github.io/whisper-everywhere-legal/">https://techbran.github.io/whisper-everywhere-legal/</a><br>
     <strong>Contact:</strong> <a href="mailto:bastrackstar@gmail.com">bastrackstar@gmail.com</a></p>
 
     <div class="highlight">
-        <strong>Summary:</strong> Transcribe Everywhere transcribes your speech <strong>100% on your device by default</strong>. Your audio is processed locally by an on-device speech-recognition model and <strong>never leaves your phone unless you both add your own cloud provider key and select that provider as your transcription engine</strong> (see Section 6 — off by default, and entirely optional). There are no accounts, no servers we control, and no analytics or tracking. Other than an optional cloud provider you configure yourself, the only time the app uses the network is to download a speech model file once, so it can work fully offline afterward.
+        <strong>Summary:</strong> Transcribe Everywhere transcribes your speech <strong>100% on your device by default</strong>. Your audio is processed locally by an on-device speech-recognition model and <strong>never leaves your phone unless you both add your own cloud provider key and select that provider as your transcription engine</strong> (see Section 6 — off by default, and entirely optional). There are no accounts, no servers we control, and no analytics or tracking. Other than an optional cloud provider you configure yourself, the app uses the network only to download a speech model file once, so it can work fully offline afterward, and — during the 72-hour free trial only — for a once-a-day time check that sends nothing about you (see Section 5).
     </div>
 
     <h2>1. Introduction</h2>
@@ -81,20 +81,23 @@
     </ul>
 
     <h2>4. Information Stored on Your Device</h2>
-    <p>The following data is stored locally on your device only:</p>
+    <p>The following data is kept in the App's private storage on your device. If Android's backup to your Google account is on, the App's preferences and the trial record below are also kept in that backup, and moved with them when you transfer to a new phone:</p>
     <ul>
         <li><strong>Speech Model Files:</strong> The whisper model you download is stored in the App's private storage so transcription can run offline.</li>
         <li><strong>App Preferences:</strong> Settings such as haptic-feedback preference, selected model, and the floating-bubble position.</li>
         <li><strong>Usage Statistics:</strong> Basic counts (e.g., number of transcriptions) stored locally for your own reference only.</li>
         <li><strong>Long-Form Transcripts:</strong> When you record long sessions, the running transcript is written to a private file in the App's storage so very long recordings do not exhaust memory. These files stay on your device and can be cleared by you.</li>
+        <li><strong>Trial Record:</strong> A small record of when your 72-hour free trial started, whether it has ended, and whether you had the App from Google Play before it became free. It is kept in the App's storage and, if Google backup is on, in your Google backup (through Google Play services) so it survives a reinstall. It holds no personal information, and nothing in it is sent to us.</li>
+        <li><strong>Purchases and install details:</strong> The one-time unlock is bought through Google Play, which processes the payment under Google's privacy policy; the App asks Google Play on your phone whether this account owns the unlock and when and how the App was installed, and keeps only the answer on the device — nothing is sent to us.</li>
     </ul>
 
     <h2>5. Network Use</h2>
-    <p>The App's only use of the network is to <strong>download a speech model file</strong>:</p>
+    <p>The App uses the network to <strong>download a speech model file</strong> and, during the free trial only, for <strong>a once-a-day time check</strong>:</p>
     <ul>
         <li>Model files are downloaded over HTTPS from the public Hugging Face model repository (huggingface.co) the first time you choose a model.</li>
         <li>These are ordinary file downloads. No audio, transcription, or personal data is sent as part of the request.</li>
         <li>After a model is downloaded, transcription works entirely offline and the App does not need a network connection to function.</li>
+        <li><strong>A once-a-day time check during the free trial only:</strong> on Android 8 to 12 — and on newer phones only when the system's own network time is unavailable — the App asks Google's connectivity-check address (<code>https://www.gstatic.com/generate_204</code>) for the current time at most once a day while the 72-hour free trial runs, so that changing the phone's clock cannot extend the trial. The request sends nothing about you, your audio or your text, and it stops once the trial ends or the App is unlocked.</li>
     </ul>
     <p><strong>By default, at no point is your audio or transcription data transmitted off your device.</strong> The only exception is the optional cloud providers feature described next, which is off until you deliberately turn it on.</p>
 
@@ -124,7 +127,7 @@
         <li><strong>Display Over Other Apps (SYSTEM_ALERT_WINDOW):</strong> To show the floating bubble overlay that lets you dictate from any app.</li>
         <li><strong>Accessibility Service:</strong> To detect the focused text field and insert your transcribed text into it. The service only responds to text-field focus and performs text insertion when you dictate; it does not read, collect, or transmit the content of your screen.</li>
         <li><strong>Notification Access (Optional):</strong> To detect media playback for the optional media-transcription feature. This permission is optional and used only to detect when audio/video is playing; audio captured this way is always transcribed on-device and is never sent to a cloud provider (see Section 6).</li>
-        <li><strong>Internet:</strong> Used to download the speech model file from Hugging Face, and — only if you have added your own key for a cloud provider and selected it as your transcription engine (see Section 6) — to send that key to the provider once to verify it, and to send your dictated audio to that provider for transcription. It is never used to send your data to us.</li>
+        <li><strong>Internet:</strong> Used to download the speech model file from Hugging Face, for the once-a-day time check during the free trial (see Section 5), and — only if you have added your own key for a cloud provider and selected it as your transcription engine (see Section 6) — to send that key to the provider once to verify it, and to send your dictated audio to that provider for transcription. It is never used to send your data to us.</li>
         <li><strong>Vibration:</strong> To provide optional haptic feedback during recording (can be disabled).</li>
     </ul>
 
@@ -145,16 +148,18 @@
     <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date at the top of this policy. We encourage you to review this Privacy Policy periodically.</p>
 
     <h2>11. Your Rights and Data Deletion</h2>
-    <p>Because we do not collect or store your data on any server, all of your data lives on your device and is fully under your control:</p>
+    <p>Because we do not collect or store your data on any server of ours, your data lives on your device (and, if Android's backup to your Google account is on, in that backup) and is under your control:</p>
     <ul>
         <li>You can delete downloaded speech models from within the App's Settings.</li>
         <li>You can clear the App's data from Android Settings to remove all locally stored preferences, models, and transcripts.</li>
         <li>You can uninstall the App to remove all locally stored data.</li>
+        <li>The small trial record (Section 4) is kept through Google Play services so that a reinstall cannot restart the free trial; it holds no personal information and may remain after the App is uninstalled or its data is cleared.</li>
     </ul>
 
     <h2>12. Contact Us</h2>
     <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us at:</p>
     <p>Brandon tech (developer of Transcribe Everywhere)<br>Email: <a href="mailto:bastrackstar@gmail.com">bastrackstar@gmail.com</a></p>
+    <p>If you email us for an unlock code (&ldquo;Bought it before?&rdquo; in the App), we receive your email address and the Google Play order number you send, and use them only to check your purchase and reply.</p>
 
     <h2>13. Consent</h2>
     <p>By using Transcribe Everywhere, you consent to this Privacy Policy and agree to its terms.</p>
